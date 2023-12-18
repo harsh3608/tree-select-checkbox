@@ -218,7 +218,7 @@ export class HomeComponent implements OnInit {
   }
 
   convertToTree(choices: CustomObject[]): void {
-    let parentIds: number[] = [];
+    //let parentIds: number[] = [];
     choices.forEach((choice, index: number) => {
       let newChoice = {
         key: index,
@@ -229,11 +229,11 @@ export class HomeComponent implements OnInit {
         children: []
       };
       this.choices1.push(newChoice);
-      parentIds.push(choice.parent_artifact_id || 0);
+      //parentIds.push(choice.parent_artifact_id || 0);
     });
-    const uniqueSet = new Set(parentIds);
-    parentIds = Array.from(uniqueSet);
-    console.log(parentIds);
+    // const uniqueSet = new Set(parentIds);
+    // parentIds = Array.from(uniqueSet);
+    // console.log(parentIds);
 
 
     this.choices1.forEach(element => {
