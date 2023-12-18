@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { log } from 'console';
 import { TreeSelectModule } from 'primeng/treeselect';
 
 
@@ -185,7 +184,7 @@ export class HomeComponent implements OnInit {
               "label": "Custom MC2A2",
               "artifact_id": 1039997,
               "parent_artifact_id": 1039990,
-              "order": 402,
+              "order": 403,
               "children": []
             }
           ]
@@ -196,7 +195,16 @@ export class HomeComponent implements OnInit {
           "artifact_id": 1039992,
           "parent_artifact_id": 1039989,
           "order": 503,
-          "children": []
+          "children": [
+            {
+              "key": "1-1-1",
+              "label": "Custom MC2B1",
+              "artifact_id": 103782,
+              "parent_artifact_id": 1039992,
+              "order": 603,
+              "children": []
+            }
+          ]
         }
       ]
     }
@@ -206,6 +214,25 @@ export class HomeComponent implements OnInit {
   choices1: any[] = [];
   selectedNodes: any;
   selectedValue = new FormControl('');
+
+  selectedFiles: TreeNode[] = [];
+  files: any = [{
+    "key": "1-1",
+    "label": "Custom MC2B",
+    "artifact_id": 1039992,
+    "parent_artifact_id": 1039989,
+    "order": 503,
+    "children": [
+      {
+        "key": "1-1-1",
+        "label": "Custom MC2B1",
+        "artifact_id": 103782,
+        "parent_artifact_id": 1039992,
+        "order": 603,
+        "children": []
+      }
+    ]
+  }];
 
   constructor() {
 
@@ -258,7 +285,7 @@ export class HomeComponent implements OnInit {
     let choices3 = this.choices1.filter(choice => (choice.order % 100) === 0);
 
     console.log(choices3);
-
+    //this.files = choices3
 
 
   }
@@ -269,6 +296,20 @@ export class HomeComponent implements OnInit {
 
   }
 
+  onNodeSelect(event: any): void {
+    const selectedNode = event.node;
+
+    console.log(selectedNode);
+
+    // Check if the selected node has children
+    if (selectedNode.children && selectedNode.children.length > 0) {
+      // Handle the selection logic for nodes with children
+      // For example, you may choose not to select the parent automatically
+    } else {
+      // Handle the selection logic for leaf nodes (nodes without children)
+      this.selectedNodes = [selectedNode];
+    }
+  }
 
 
 
