@@ -179,6 +179,14 @@ export class HomeComponent implements OnInit {
               "parent_artifact_id": 1039990,
               "order": 402,
               "children": []
+            },
+            {
+              "key": "1-0-1",
+              "label": "Custom MC2A2",
+              "artifact_id": 1039997,
+              "parent_artifact_id": 1039990,
+              "order": 402,
+              "children": []
             }
           ]
         },
