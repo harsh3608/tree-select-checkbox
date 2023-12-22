@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { TreeSelectModule } from 'primeng/treeselect';
 
-
+ 
 interface CustomObject {
   code_type_id: number;
   order: number;
