@@ -227,7 +227,7 @@ export class HomeComponent implements OnInit {
         parent_artifact_id: choice.parent_artifact_id,
         order: choice.order,
         children: []
-      };
+      }; 
       this.choices1.push(newChoice);
       //parentIds.push(choice.parent_artifact_id || 0);
     });
